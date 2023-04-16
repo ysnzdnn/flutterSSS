@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "753551413545",
+    "project_id": "firebase-sss-training",
+    "storage_bucket": "firebase-sss-training.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753551413545:android:0f57b03cb421e70100e738",
+        "android_client_info": {
+          "package_name": "com.example.food"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753551413545-qg6m6o21hlrseoo0ql62p0lk0jcs5ttk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAArQcGGcKj1cKJeeBWxVfAtes8s7F7oVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753551413545-qg6m6o21hlrseoo0ql62p0lk0jcs5ttk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "753551413545-rngrtk9v2215u3um013ng7hkj7obh2bm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.food"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
