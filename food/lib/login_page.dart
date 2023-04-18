@@ -51,7 +51,34 @@ class _LoginPageState extends State<LoginPage> {
                           customSizedBox(),
                   TextField(decoration: customInputDecoration("Parola")),
                   customSizedBox(),
-                  Center(child: TextButton(onPressed: (){}, child: Text("Şifremi Unuttum"))),
+                   Container(
+                    child: Center(
+                      child: TextButton(onPressed: (){}, child: Text("Giriş Yap",style:TextStyle(
+                        color: Colors.blue,
+                      ))),
+                    ),
+                  ),
+                  customSizedBox(),
+                  Container(
+                    child: Center(child: TextButton(onPressed: (){}, child: Text("Şifremi Unuttum", style:TextStyle(
+                      color:Colors.purple
+                    ),
+                    ),
+                    ),
+                    ),
+                  ),
+                  
+                 
+                  customSizedBox(),
+                  Container(
+                    child: Center(
+                      child: TextButton(onPressed: (){}, child: Text("Hesap Oluştur",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 194, 147, 6)
+                      ))
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
