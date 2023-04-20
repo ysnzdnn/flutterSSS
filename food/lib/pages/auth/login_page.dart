@@ -31,52 +31,52 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Merhabayınız", 
+                    "Merhabayınız",
                     style: TextStyle(
                       fontSize: 31,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                   Text(
+                  Text(
                     " \n Lütfen Kullanıcı Girişi Yapınız... ",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400
-                    ),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                   ),
                   customSizedBox(),
-                  TextField(
-                      decoration: customInputDecoration(
-                          "Kullanıcı adı ve e-mail adresi")),
-                          customSizedBox(),
-                  TextField(decoration: customInputDecoration("Parola")),
+                  customInputID(),
                   customSizedBox(),
-                   Container(
+                  customInputPassword(),
+                  customSizedBox(),
+                  Container(
                     child: Center(
-                      child: TextButton(onPressed: (){}, child: Text("Giriş Yap",style:TextStyle(
-                        color: Colors.blue,
-                      ))),
+                      child: TextButton(
+                          onPressed: () {},
+                          child: Text("Giriş Yap",
+                              style: TextStyle(
+                                color: Colors.blue,
+                              ))),
                     ),
                   ),
                   customSizedBox(),
                   Container(
-                    child: Center(child: TextButton(onPressed: (){}, child: Text("Şifremi Unuttum", style:TextStyle(
-                      color:Colors.purple
-                    ),
-                    ),
-                    ),
-                    ),
-                  ),
-                  
-                 
-                  customSizedBox(),
-                  Container(
                     child: Center(
-                      child: TextButton(onPressed: (){}, child: Text("Hesap Oluştur",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 194, 147, 6)
-                      ))
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Şifremi Unuttum",
+                          style: TextStyle(color: Colors.purple),
+                        ),
                       ),
+                    ),
+                  ),
+                  customSizedBox(),
+                  Container(
+                    child: Center(
+                      child: TextButton(
+                          onPressed: () =>
+                              Navigator.pushNamed(context, "/signup"),
+                          child: Text("Hesap Oluştur",
+                              style: TextStyle(
+                                  color: Colors.purpleAccent))),
                     ),
                   )
                 ],
@@ -87,6 +87,12 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+  Widget customInputID() => TextField(
+      decoration: customInputDecoration("Kullanıcı adı veya e-mail adresi"));
+
+  Widget customInputPassword() =>
+      TextField(decoration: customInputDecoration("Parola"));
 
   Widget customSizedBox() => SizedBox(
         height: 20,
