@@ -91,7 +91,6 @@ class _SignUpState extends State<SignUp> {
       },
       onSaved: (value) {
         password = value!;
-       
       },
       style: TextStyle(color: Colors.white),
       decoration: customInputDecoration("Şifre"),
@@ -101,29 +100,31 @@ class _SignUpState extends State<SignUp> {
   Center signUpButton() {
     return Center(
         child: TextButton(
-      onPressed: () async {
-        if (formKey.currentState!.validate()) {
-          formKey.currentState!.save();
-        } else {}
-        try {
-          var userResult = await firebaseAuth.createUserWithEmailAndPassword(
-              email: email, password: password);
-          print(userResult.user!.uid);
-
-          formKey.currentState!.reset();
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(
-                "Kullanıcı Kaydedildi,, Başlangıç Sayfasına Yönelndiriliyorsunuz"),
-          ));
-          Navigator.pushReplacementNamed(context, "/loginpage");
-        } catch (e) {
-          print(e.toString());
-        }
-      },
+      onPressed: signIn,
       child: Text(
         "Hesap Olustur",
       ),
     ));
+  }
+
+  void signIn() async {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+    } else {}
+    try {
+      var userResult = await firebaseAuth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      print(userResult.user!.uid);
+
+      formKey.currentState!.reset();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text(
+            "Kullanıcı Kaydedildi,, Başlangıç Sayfasına Yönelndiriliyorsunuz"),
+      ));
+      Navigator.pushReplacementNamed(context, "/loginpage");
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   Center backToLoginPage() {
