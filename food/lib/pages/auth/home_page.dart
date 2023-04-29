@@ -11,9 +11,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Center(child: Text(
-        "anasayfa" , style: TextStyle(color: Colors.green),
-      ),)
-    );
+      appBar: AppBar(title:Text("Profil" ), backgroundColor: Colors.purpleAccent, ),
+        body: Container(
+      child: Center(
+        child: TextButton(
+            onPressed: () => Navigator.pushNamed(context, "/recipecreate"),
+            child: Text("Yemek Tarifi Ekle",
+                style: TextStyle(color: Colors.purpleAccent))),
+      ),
+    ));
   }
 }

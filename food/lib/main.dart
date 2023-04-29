@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:food/firebase_options.dart';
 import 'package:food/pages/auth/home_page.dart';
 import 'package:food/pages/auth/login_page.dart';
+import 'package:food/pages/auth/recipe_create.dart';
 import 'package:food/pages/auth/sign_up.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         "/loginpage": (context) => LoginPage(),
         "/signup": (context) => SignUp(),
         "/homepage": (context) => HomePage(),
+        "/recipecreate": (context) => CreatePage(),
       },
       home: Scaffold(
         body: LoginPage(),
